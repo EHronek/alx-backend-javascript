@@ -20,6 +20,7 @@ module.exports = {
     rules: {
       'no-console': 'off',
       'no-shadow': 'off',
+      'indent': ['error', 2],
       'no-restricted-syntax': [
         'error',
         'LabeledStatement',
