@@ -1,4 +1,3 @@
-// First define the classes before using them
 export class ALXClass {
   constructor(year, location) {
     this._year = year;
@@ -15,10 +14,10 @@ export class ALXClass {
 }
 
 export class StudentALX {
-  constructor(firstName, lastName, alxClass) { // Added missing alxClass parameter
+  constructor(firstName, lastName, alxClass) {
     this._firstName = firstName;
     this._lastName = lastName;
-    this._alxClass = alxClass; // Fixed assignment to use underscore
+    this._alxClass = alxClass;
   }
 
   get fullName() {
@@ -26,7 +25,7 @@ export class StudentALX {
   }
 
   get alxClass() {
-    return this._alxClass; // Fixed to return _alxClass
+    return this._alxClass;
   }
 
   get fullStudentDescription() {
@@ -34,7 +33,6 @@ export class StudentALX {
   }
 }
 
-// Now create instances after class definitions
 const class2019 = new ALXClass(2019, 'San Francisco');
 const class2020 = new ALXClass(2020, 'San Francisco');
 
