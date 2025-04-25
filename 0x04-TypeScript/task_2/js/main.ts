@@ -1,3 +1,5 @@
+import { EvalSourceMapDevToolPlugin } from "webpack";
+
 export interface DirectorInterface {
     workFromHome(): string;
     getCoffeeBreak(): string;
@@ -45,6 +47,22 @@ export function createEmployee(salary: number | string): Director | Teacher {
     return new Director();
 }
 
+export function isDirector(employee: Director | Teacher): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+}
+
+export function executeWork(employee: Director | Teacher): string {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    } else {
+        return employee.workTeacherTasks();
+    }
+}
+
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'))
+
+// Testing the executeWork function
+console.log(executeWork(createEmployee(200))); // Getting to work
+console.log(executeWork(createEmployee(1000))); // Getting to director tasks
