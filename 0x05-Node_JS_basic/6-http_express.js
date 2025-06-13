@@ -4,11 +4,11 @@ const app = express();
 const PORT = 1245;
 
 app.get('/', (_, res) => {
-    res.send('Hello ALX!');
+  res.send('Hello Holberton School!');
 });
 
 app.listen(PORT, () => {
-    console.log(`listening on PORT ${PORT}`);
+  console.log(`listening on PORT ${PORT}`);
 });
 
 module.exports = app;
